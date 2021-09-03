@@ -1,2 +1,2 @@
 # leetcode
-my leetcode submissions
+My leetcode exercises.
