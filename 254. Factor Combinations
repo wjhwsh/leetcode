@@ -1,1 +1,25 @@
+[254. Factor Combinations](https://leetcode.com/problems/factor-combinations/)  
 
+```
+class Solution {
+    var ans = [[Int]]()
+    func getFactors(_ n: Int) -> [[Int]] {
+        helper(n, 2)
+        return ans
+    }
+    
+    func helper(_ n: Int, _ start: Int, _ path: [Int] = []) {
+        if n <= 1 {
+            if path.count > 1 {
+                ans.append(path)
+            }
+        } else if start <= n {
+            for i in start...n {
+                if n % i == 0 {
+                    helper(n / i, i, path + [i])
+                }
+            }
+        }
+    }
+}
+```
